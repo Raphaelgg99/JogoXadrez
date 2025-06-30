@@ -6,12 +6,12 @@ public class Cavalo extends Peca {
   }
 
   @Override
-  public boolean movimentoValido(int novaLinha, int novaColuna, Peca[][] tabuleiro) {
+  public boolean movimentoValido(int novaLinha, int novaColuna, Peca[][] peca, Tabuleiro tabuleiro) {
     int dLinha = Math.abs(novaLinha - linha); 
     int dColuna = Math.abs(novaColuna - coluna); 
 
     if((dLinha == 2 && dColuna == 1) || (dColuna == 2 && dLinha == 1)){ 
-      if(tabuleiro[novaLinha][novaColuna] != null && tabuleiro[novaLinha][novaColuna].getCor().equals(this.cor)){
+      if(peca[novaLinha][novaColuna] != null && peca[novaLinha][novaColuna].getCor().equals(this.cor)){
         return false;
       } 
       return true;

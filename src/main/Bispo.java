@@ -6,7 +6,7 @@ public class Bispo extends Peca {
   }
 
   @Override
-  public boolean movimentoValido(int novaLinha, int novaColuna, Peca[][] tabuleiro) { 
+  public boolean movimentoValido(int novaLinha, int novaColuna, Peca[][] peca, Tabuleiro tabuleiro) { 
 
     if (Math.abs(novaLinha - linha) != Math.abs(novaColuna - coluna)) {
     return false;
@@ -21,7 +21,7 @@ public class Bispo extends Peca {
     
     while(atualLinha != novaLinha || atualColuna != novaColuna){ 
 
-      if(tabuleiro[atualLinha][atualColuna]!=null){
+      if(peca[atualLinha][atualColuna]!=null){
         return false;
       }
       
@@ -30,7 +30,7 @@ public class Bispo extends Peca {
     
     }  
 
-    if(tabuleiro[novaLinha][novaColuna] != null && tabuleiro[novaLinha][novaColuna].getCor().equals(this.cor)){
+    if(peca[novaLinha][novaColuna] != null && peca[novaLinha][novaColuna].getCor().equals(this.cor)){
         return false;
       } 
 

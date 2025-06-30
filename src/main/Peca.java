@@ -2,13 +2,13 @@ public abstract class Peca {
 
   protected String cor;   
   protected int coluna; 
-  protected int linha;
+  protected int linha; 
   protected boolean jaMoveu = false; 
 
   public Peca(String cor, int coluna, int linha){
     this.cor = cor; 
     this.coluna = coluna; 
-    this.linha = linha;
+    this.linha = linha; 
   } 
 
   public String getCor(){
@@ -28,7 +28,7 @@ public abstract class Peca {
       this.coluna = coluna;
    } 
 
-  public abstract boolean movimentoValido(int novaLinha, int novaColuna, Peca[][] tabuleiro);   
+  public abstract boolean movimentoValido(int novaLinha, int novaColuna, Peca[][] peca, Tabuleiro tabuleiro);   
 
   public abstract String getSimbolo();
 

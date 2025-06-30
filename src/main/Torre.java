@@ -6,7 +6,7 @@ public class Torre extends Peca {
   }
 
   @Override
-  public boolean movimentoValido(int novaLinha, int novaColuna, Peca[][] tabuleiro) {
+  public boolean movimentoValido(int novaLinha, int novaColuna, Peca[][] peca, Tabuleiro tabuleiro) {
 
     if (novaLinha != linha && novaColuna != coluna) {
       return false;
@@ -20,14 +20,14 @@ public class Torre extends Peca {
 
     while (atualLinha != novaLinha) {
 
-      if (tabuleiro[atualLinha][atualColuna] != null) {
+      if (peca[atualLinha][atualColuna] != null) {
         return false;
       }
       atualLinha += passoLinha;
       atualColuna += passoColuna;
     }
 
-    if (tabuleiro[novaLinha][novaColuna] != null && tabuleiro[novaLinha][novaColuna].getCor().equals(this.cor)) {
+    if (peca[novaLinha][novaColuna] != null && peca[novaLinha][novaColuna].getCor().equals(this.cor)) {
       return false;
     }
     return true;
